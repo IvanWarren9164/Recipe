@@ -1,9 +1,23 @@
-﻿
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
 
-@model Recipe.Models.ViewModels.RecipeIndexViewModel
 
-<ul>
-    <li>
-        <h4>@Model.Index[0].Title;</h4>
-    </li>
-</ul>
+@model Recipe.Models.ViewModels.RecipeSearchViewModel
+
+<form asp-controller="Home" asp-action="RecipeIndexResult" method="post">
+
+    <label asp-for="title">Recipe Name</label>
+    <input asp-for="title" /><br />
+
+    <label asp-for="ingredient">Ingredient</label>
+    <input asp-for="ingredient" /><br />
+
+    <label asp-for="page">Page Number</label>
+    <input asp-for="page" /><br />
+
+    <button>Search</button>
+
+</form>

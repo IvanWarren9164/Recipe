@@ -7,6 +7,9 @@ namespace Recipe.Models.ViewModels
 {
     public class RecipeIndexViewModel
     {
-        public ResultsViewModel[] Index {get; set;}
+        public IEnumerable<ResultsViewModel> results;
+        //public string title { get; set; }
+        //public string href { get; set; }
+        //public string thumbnail { get; set; }
     }
 }

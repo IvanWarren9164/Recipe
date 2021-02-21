@@ -18,9 +18,9 @@ namespace Recipe
             _client = client;
         }
 
-        public async Task<RecipeViewModel> GetAllRecipes()
+        public async Task<Search> GetAllRecipes(string ingredients, string title, string page )
         {
-            return await GetAsync<RecipeViewModel>("/api/");
+            return await GetAsync<Search>($"/api/?i={ingredients}&q={title}&p={page}");
         }
 
 

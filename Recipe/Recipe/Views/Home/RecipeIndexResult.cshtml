@@ -1,0 +1,16 @@
+﻿
+
+@model Recipe.Models.ViewModels.RecipeIndexViewModel
+
+@foreach (var result in Model.results)
+    {
+        <ul>
+            <li>
+                <h2>@result.title</h2>
+                <a href=@result.href>View Recipe</a>
+                <a class="text-success" asp-controller="Home" asp-action="AddFavorite" 
+                asp-route-title ="@result.title" asp-route-href ="@result.href" asp-route-thumbnail ="@result.thumbnail">Add To Favorites</a>
+            </li>
+        </ul>
+    }
+

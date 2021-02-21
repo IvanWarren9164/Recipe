@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+@foreach (var result in Model.results)
+{
+    <ul>
+        <li>
+            <h2>@result.title</h2>
+            <a href=@result.href>View Recipe</a>
+            <a class="text-danger" asp-controller="Home" asp-action="DeleteFavorite" asp-route-id="@result.ID">Delete From Favorites</a>
+        </li>
+    </ul>
+}

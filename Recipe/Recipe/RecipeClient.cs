@@ -24,7 +24,7 @@ namespace Recipe
         }
 
 
-        private async Task<T> GetAsync<T>(string endPoint)
+        private async Task<Search> GetAsync<Search>(string endPoint)
         {
             // Post    -  Insert    -  Create
             // Get     -  Select    -  Read
@@ -40,7 +40,7 @@ namespace Recipe
 
                 // var jsonOptions = new JsonSerializerOptions();
 
-                var model = await JsonSerializer.DeserializeAsync<T>(content);
+                var model = await JsonSerializer.DeserializeAsync<Search>(content);
 
                 return model;
             }
